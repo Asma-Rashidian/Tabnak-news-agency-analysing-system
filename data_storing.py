@@ -28,7 +28,7 @@ try:
         host='localhost',
         database='tabnak_news',
         user='tabnak',
-        password='asma1379'
+        password='*******'
     )
     my_cursor = my_connection.cursor()
     print("Successfully connected to DataBase!")

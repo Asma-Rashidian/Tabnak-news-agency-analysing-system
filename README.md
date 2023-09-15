@@ -1,7 +1,7 @@
 
 # Tabnak News Agency Analyzer 
 
-# Python Scripts for Tabnak website link Crawling, TF-IDF Implementation on the text of each crawled link, applied(Decision Tree, Random Forest, and XGBoost ) on TF-IDF results.
+## Python Scripts for Tabnak website link Crawling, TF-IDF Implementation on the text of each crawled link, applying Decision Tree, Random Forest, and XGBoost models on TF-IDF results.
  
 This repository contains Python scripts for various tasks including Tabnak website link Crawling, TF-IDF Implementation on the text of each crawled link, applied(Decision Tree, Random Forest, and XGBoost ) on TF-IDF results.
  

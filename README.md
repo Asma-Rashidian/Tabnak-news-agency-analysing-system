@@ -46,22 +46,36 @@ pip install requests beautifulsoup4 scikit-learn xgboost
 - The Decision tree, Random forest, and XGBoost model achieved the following performance metrics:
 
 	**Decision Tree Model Result**
-				precision	recall	  f1-score	support
-		   accuracy                                 0.85           20
+  
+  					precision	recall	  f1-score	support
+		
+			     accuracy                                 0.85           20
+  
                    macro avg          0.70       0.65       0.67           20
+  
                    weighted avg       0.90       0.85       0.87           20
+  
 
 	**Random Forest Model Result**
-				precision	recall	  f1-score	support
-		   accuracy                                 0.90           20
+  
+					precision	recall	  f1-score	support
+  
+		  	     accuracy                                 0.90           20
+  
                    macro avg          0.73       0.68       0.70           20
+  
                    weighted avg       0.95       0.90       0.92           20
 
 	**XGBoost Model Result**
-				precision	recall	  f1-score	support
-		   accuracy                                 0.40           20
+  
+					precision	recall	  f1-score	support
+  
+			     accuracy                                 0.40           20
+  
                    macro avg          0.36       0.36       0.36           20
+  
                    weighted avg       0.40       0.40       0.40           20
+  
 
 --- 
  

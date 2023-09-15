@@ -17,24 +17,29 @@ pip install requests beautifulsoup4 scikit-learn xgboost
 1. **Link Crawler**:  link_crawler.py  
    - This script crawls the Tabnak website and extracts 100 links from the web pages. 
    - The main website is: https://www.tabnak.ir
-   - Data are stored on localhost Mysql database
+   - Links are in "links.txt"
 
 2. **Data Storing**:  data_storing.py
+   - The script crawls all pages of links and stores the main texts.
+   - These texts are stored on the localhost MySQL database.
 
 3. **TF-IDF Implementation**:  tfidf_implementation.py  
-   - This script demonstrates the implementation of the Term Frequency-Inverse Document Frequency (TF-IDF) algorithm
-   	on stored data in  the localhost Mysql database.
+   - This script demonstrates the implementation of the Term Frequency-Inverse Document Frequency (TF-IDF) algorithm.
+   - All common words in the texts of each news category are stored in a text file by category name in the "union" folder.
+   - the TF-IDF vectors of each page are stored in the "tfidf_result" folder based on their category as CSV files.
  
 4. **Decision Tree**:  decision_tree.py  
    - This script implements a Decision Tree classifier using the scikit-learn library 
    	based on TF-IDF vector result.
+   - The decision tree picture is stored as "decision_tree.png".
  
 5. **Random Forest**:  random_forest.py  
    - This script demonstrates the implementation of a Random Forest classifier using the scikit-learn library
       	based on the TF-IDF vector result.
+   - Random Forest picture is stored as "random_forest.png".
  
 6. **XGBoost**:  xgboost.py  
-   - This script implements XGBoost, a gradient boosting framework, for classification tasks
+   - This script implements XGBoost, a gradient boosting model, for classification tasks
       	based on TF-IDF vector results.
  
 ## Notes 

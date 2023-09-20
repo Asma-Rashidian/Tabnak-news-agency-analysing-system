@@ -1,7 +1,7 @@
 
 # Tabnak News Agency Analyzer 
 
-## Python Scripts for Tabnak website link Crawling, TF-IDF Implementation on the text of each crawled link, applying Decision Tree, Random Forest, and XGBoost models on TF-IDF results.
+## Python Scripts are designed for  Tabnak website link Crawling, TF-IDF Implementation on the text of each crawled link, and applying Decision Tree, Random Forest, and XGBoost models on TF-IDF results.
  
 This repository contains Python scripts for various tasks including Tabnak website link Crawling, TF-IDF Implementation on the text of each crawled link, applied(Decision Tree, Random Forest, and XGBoost ) on TF-IDF results.
  
@@ -13,35 +13,34 @@ Before running the scripts, ensure that you have the following:
 - Required libraries installed (e.g., requests, BeautifulSoup, scikit-learn, xgboost, numpy, matplotlib, etc.). Install the libraries using pip:
 pip install requests beautifulsoup4 scikit-learn xgboost
 ## Scripts 
+1. **Data and Link Crawler** : extract.py
+	
+ 	1. The code starts by importing the necessary libraries: requests, BeautifulSoup, re, mysql.connector, and csv. 
  
-1. **Link Crawler**:  link_crawler.py  
-   - This script crawls the Tabnak website and extracts 100 links from the web pages. 
-   - The main website is: https://www.tabnak.ir
-   - Links are in "links.txt"
+	
+ 	2. It defines a class called DataCrawler with the following attributes: 
+	   - crawled_links: a list to store all the crawled links 
+	   - all_crawled_data: a list to store all the crawled data 
+	   - main_url: the main URL of the website to be crawled 
+	 
+	
+ 	3. The class has several methods: 
+	   - link_crawler: This method is responsible for crawling the links from different categories of the main website and other websites. It uses the requests library to make HTTP requests and BeautifulSoup library to parse the HTML content of the web pages. It extracts the links and stores them in the crawled_links list. 
 
-2. **Data Storing**:  data_storing.py
-   - The script crawls all pages of links and stores the main texts.
-   - These texts are stored on the localhost MySQL database.
-
-3. **TF-IDF Implementation**:  tfidf_implementation.py  
-   - This script demonstrates the implementation of the Term Frequency-Inverse Document Frequency (TF-IDF) algorithm.
-   - All common words in the texts of each news category are stored in a text file by category name in the "union" folder.
-   - the TF-IDF vectors of each page are stored in the "tfidf_result" folder based on their category as CSV files.
- 
-4. **Decision Tree**:  decision_tree.py  
-   - This script implements a Decision Tree classifier using the scikit-learn library 
-   	based on TF-IDF vector result.
-   - The decision tree picture is stored as "decision_tree.png".
- 
-5. **Random Forest**:  random_forest.py  
-   - This script demonstrates the implementation of a Random Forest classifier using the scikit-learn library
-      	based on the TF-IDF vector result.
-   - Random Forest picture is stored as "random_forest.png".
- 
-6. **XGBoost**:  xgboost.py  
-   - This script implements XGBoost, a gradient boosting model, for classification tasks
-      	based on TF-IDF vector results.
- 
+2.**Apply Models** : models.py
+	
+ 	1. The code imports necessary libraries such as MySQL Connector, TfidfVectorizer, DecisionTreeClassifier, train_test_split, RandomForestClassifier, classification_report, matplotlib, etc. 
+	
+ 	2. The "TextModels" class is defined with the following methods: 
+	   a. __init__(): Initializes the class with empty text_corpus and labels lists. 
+	   b. load_data(): Connects to a MySQL database and retrieves the text corpus and labels from the "tab_news" table. It then appends each text and label to the corresponding list. 
+	   c. tfidf_implementation(): Implements tf-idf vectorization on the text corpus using TfidfVectorizer. It then saves the feature names to a CSV file. 
+	   d. decision_tree(): Splits the data into training and testing sets, trains a decision tree classifier on the training set, makes predictions on the testing set, and evaluates the model. It then prints the classification report and displays the decision tree using matplotlib. 
+	   e. random_forest(): Splits the data into training and testing sets, trains a random forest classifier on the training set, makes predictions on the testing set, and evaluates the model. It then prints the classification report. 
+	   f. xgboost_model(): Splits the data into training and testing sets, trains an XGBoost classifier on the training set, makes predictions on the testing set, and evaluates the model. It then prints the classification report. 
+	   g. excutor(): Calls the load_data() and tfidf_implementation() methods, prompts the user to choose a machine learning model to execute, and calls the corresponding method. 
+	
+ 	3. The code checks if the current module is the main program and creates an instance of the "TextModels" class. It then calls the excutor() method to run the program.
 ## Notes 
  
 - Ensure to provide the required input files (e.g., corpus file, training data file, test data file) when running the respective scripts. 
@@ -56,32 +55,32 @@ pip install requests beautifulsoup4 scikit-learn xgboost
   
   					precision	recall	  f1-score	support
 		
-			     accuracy                                 0.85           20
+			     accuracy                                 0.39           344
   
-                   macro avg          0.70       0.65       0.67           20
+                   macro avg          0.12       0.14       0.12           344
   
-                   weighted avg       0.90       0.85       0.87           20
+                   weighted avg       0.33       0.39       0.35           344
   
 
 	**Random Forest Model Result**
   
 					precision	recall	  f1-score	support
   
-		  	     accuracy                                 0.90           20
+		  	     accuracy                                 0.48           344
   
-                   macro avg          0.73       0.68       0.70           20
+                   macro avg          0.18       0.19       0.16           344
   
-                   weighted avg       0.95       0.90       0.92           20
+                   weighted avg       0.37       0.48       0.36           344
 
 	**XGBoost Model Result**
   
 					precision	recall	  f1-score	support
   
-			     accuracy                                 0.40           20
+			     accuracy                                 0.54           344
   
-                   macro avg          0.36       0.36       0.36           20
+                   macro avg          0.21       0.24       0.22           344
   
-                   weighted avg       0.40       0.40       0.40           20
+                   weighted avg       0.45       0.54       0.48           344
   
 
 --- 

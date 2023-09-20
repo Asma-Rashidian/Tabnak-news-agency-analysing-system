@@ -55,7 +55,7 @@ class TextModels ():
     def desicion_tree (self):
 
         # Split the data into training and testing sets
-        X_train, X_test, y_train, y_test = train_test_split(self.vectors, self.labels, test_size=0.4, random_state=20)
+        X_train, X_test, y_train, y_test = train_test_split(self.vectors, self.labels, test_size=0.2, random_state=20)
 
         # Train the decision tree model
         model = DecisionTreeClassifier()
@@ -79,7 +79,7 @@ class TextModels ():
     def random_forest(self):
 
         # Split the data into training and testing sets
-        X_train, X_test, y_train, y_test = train_test_split(self.vectors, self.labels, test_size=0.3, random_state=20)
+        X_train, X_test, y_train, y_test = train_test_split(self.vectors, self.labels, test_size=0.2, random_state=20)
 
         # Train the Random Forest Classifier
         model = RandomForestClassifier()
